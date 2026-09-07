@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Visual AI Agent</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>🤖 Cloud Visual AI Agent</h1>
+        <p>Real-Time Object Detection using YOLO</p>
+    </header>
+
+    <!-- Student Information -->
+    <section class="student-info">
+
+        <div class="info-item">
+            <span class="label">Student Name</span>
+            <span class="value">Syed Arif Ahmed Zaidi</span>
+        </div>
+
+        <div class="info-item">
+            <span class="label">Registration ID</span>
+            <span class="value">62536</span>
+        </div>
+
+        <div class="info-item">
+            <span class="label">Course</span>
+            <span class="value">Cloud Computing</span>
+        </div>
+
+        <div class="info-item">
+            <span class="label">Assignment</span>
+            <span class="value">Assignment 3</span>
+        </div>
+
+    </section>
+
+
+    <main>
+
+        <!-- CAMERA -->
+        <div class="camera-card">
+
+            <div class="camera-header">
+                <h2>Live Camera</h2>
+                <span id="status">● OFFLINE</span>
+            </div>
+
+            <div class="camera-box">
+
+                <video id="video" autoplay playsinline></video>
+
+                <canvas id="canvas"></canvas>
+
+                <div id="camera-message">
+                    Camera is not started
+                </div>
+
+                <!-- FPS -->
+                <div class="fps-counter">
+                    FPS: <span id="fps">0</span>
+                </div>
+
+            </div>
+
+            <div class="buttons">
+
+                <button id="startBtn">
+                    📷 Start Camera
+                </button>
+
+                <button id="stopBtn" disabled>
+                    ⛔ Stop Camera
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESULTS -->
+        <div class="results-card">
+
+            <h2>Detection Statistics</h2>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <span id="objectCount">0</span>
+                    <small>Total Objects</small>
+                </div>
+
+                <div class="stat">
+                    <span id="personCount">0</span>
+                    <small>People</small>
+                </div>
+
+                <div class="stat">
+                    <span id="classCount">0</span>
+                    <small>Object Types</small>
+                </div>
+
+                <div class="stat">
+                    <span id="avgConfidence">0%</span>
+                    <small>Avg Confidence</small>
+                </div>
+
+            </div>
+
+
+            <!-- Current detections -->
+            <div class="detections">
+
+                <h3>Current Detections</h3>
+
+                <div id="detectionList">
+                    <p class="empty">
+                        No objects detected yet.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- History -->
+            <div class="history">
+
+                <div class="history-header">
+                    <h3>Detection History</h3>
+
+                    <button id="clearHistory">
+                        🗑 Clear
+                    </button>
+                </div>
+
+                <div id="historyList">
+                    <p class="empty">
+                        No detection history.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+        <p>
+            Cloud Computing • Assignment 3 • YOLO11n • FastAPI
+        </p>
+
+        <p>
+            Syed Arif Ahmed Zaidi • Reg ID: 62536
+        </p>
+    </footer>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
